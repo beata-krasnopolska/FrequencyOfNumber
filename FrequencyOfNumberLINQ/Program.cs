@@ -16,7 +16,14 @@ namespace FrequencyOfNumberLINQ
                          group digit by digit into y
                          select y;
 
+            var lambdaNumber = digits.GroupBy(x => x);
+            Console.WriteLine("First check by LINQ query");
             foreach (var listNo in number)
+            {
+                Console.WriteLine("The number {0} appears {1} times", listNo.Key, listNo.Count());
+            }
+            Console.WriteLine("Additional check by LINQ method");
+            foreach (var listNo in lambdaNumber)
             {
                 Console.WriteLine("The number {0} appears {1} times", listNo.Key, listNo.Count());
             }
